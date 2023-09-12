@@ -6,10 +6,9 @@
 
     import { FaUser } from 'react-icons/fa';
     import SideBartweetButton from './SideBartweetButton';
-    import Follow from './Follow';
-    import fetcher from '@/libs/fetcher'
 
 import useCurrentUser from '@/hooks/useCurrentuser';
+import { signOut } from 'next-auth/react';
     const Sidebar = () => {
         const {data:currentUser}=useCurrentUser()
        
@@ -45,7 +44,7 @@ import useCurrentUser from '@/hooks/useCurrentuser';
                         ))}
                     { 
                     currentUser 
-                    ? <SidebarItem  icon={BiLogOut} title="Logout" href={''} /> 
+                    ? <SidebarItem onClick={() => signOut()}  icon={BiLogOut} title="Logout" href={''} /> 
                     : <></>
                     } 
                     <SideBartweetButton/>
@@ -59,6 +58,5 @@ import useCurrentUser from '@/hooks/useCurrentuser';
 
     export default Sidebar
 
-function useSwr(arg0: string, fetcher: any): { data: any; error: any; isLoading: any; mutate: any; } {
-    throw new Error('Function not implemented.');
-}
+
+    
