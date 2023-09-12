@@ -2,7 +2,7 @@ import usePosts from "@/hooks/usePosts";
 import PostItem from "./PostItem";
 
 interface PostFeedProps {
-    userId : string;
+    userId? : string;
 }
 
 
