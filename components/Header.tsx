@@ -10,12 +10,10 @@ interface HeaderProps {
 const Header = ({text,displayArrow}:HeaderProps) => {
     const router=useRouter()
     
-    const handleClick = () => {
-    useCallback(() => {
-      router.back()      
-    },[router])
     
-    }
+    const handleBack = useCallback(() => {
+        router.back();
+      }, [router]);
   return (
     <div className='border-b-[1px] border-neutral-800 p-5'>
         <div className="flex flex-row items-center gap-2">
@@ -24,7 +22,7 @@ const Header = ({text,displayArrow}:HeaderProps) => {
                     <BiArrowBack 
                         size={24} 
                         color="white" 
-                        onClick={handleClick}
+                        onClick={handleBack}
                         className="cursor-pointer hover:opacity-70
                         transition
                         "    
