@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ["mongoose"],
+  },
+  eslint: {
 
-module.exports = nextConfig
+    ignoreDuringBuilds: true,
+  },
+};
+
+module.exports = nextConfig;
