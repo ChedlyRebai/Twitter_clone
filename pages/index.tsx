@@ -13,7 +13,7 @@ export default function Home() {
     <div className='text-3xl text-sky-400'>
       <Header text="header" />
       <Form placeholder={'What s happening  '} postId={''} />  
-      <PostFeed/> 
+      <PostFeed userId={''} /> 
     </div>
   )
 }
